@@ -700,6 +700,15 @@ config LEDS_MAX77650
 	help
 	  LEDs driver for MAX77650 family of PMICs from Maxim Integrated.
 
+config LEDS_MAX20096
+	tristate "LED Support for MAX20096 SPI Controller"
+	depends on LEDS_CLASS
+	depends on SPI
+	help
+	  This option enables support for the MAX20096 SPI Controller from
+	  Maxim Semiconductor, which can be used to control two LEDs.
+
+
 config LEDS_MAX77693
 	tristate "LED support for MAX77693 Flash"
 	depends on LEDS_CLASS_FLASH

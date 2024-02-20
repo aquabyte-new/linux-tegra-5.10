@@ -335,7 +335,9 @@ static irqreturn_t aquablue_irq(int irq, void *data)
 	num_regs = 1 << ab->reg_shift;
 
 	for (i = 0; i < num_regs; i++) {
+#if 0
 		unsigned int base = i << ab->reg_shift, bit;
+#endif
 		u8 changed, level, isr, ier;
 		unsigned long pending;
 		int err;

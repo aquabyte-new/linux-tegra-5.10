@@ -376,12 +376,14 @@ static irqreturn_t aquablue_irq(int irq, void *data)
 		/* mask out non-pending and disabled interrupts */
 		pending &= isr & ier;
 
+#if 0
 		for_each_set_bit(bit, &pending, 8) {
 			unsigned int child_irq;
 			child_irq = irq_find_mapping(ab->gpio.irqdomain,
 						     base + bit);
 			handle_nested_irq(child_irq);
 		}
+#endif
 	}
 	return IRQ_HANDLED;
 }
